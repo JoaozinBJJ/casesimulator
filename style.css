@@ -1,0 +1,66 @@
+:root{
+	--bg: #0f1724;
+	--card-bg: #0b1220;
+	--text: #e6eef8;
+	--muted: #9fb0c8;
+	--accent: #4fc3f7;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,Roboto,Arial,sans-serif;background:linear-gradient(180deg,#071021,#0b1220);color:var(--text);margin:0;min-height:100vh}
+.container{max-width:980px;margin:28px auto;padding:20px}
+.top{display:flex;align-items:center;justify-content:space-between}
+.top h1{margin:0;font-size:1.4rem}
+.controls{display:flex;gap:12px;align-items:center}
+.saldo{font-weight:600;color:var(--muted)}
+.btn{background:var(--accent);border:none;padding:10px 14px;border-radius:8px;color:#012;cursor:pointer;font-weight:700}
+.simulator{margin-top:20px}
+.box-area{position:relative;height:250px;overflow:hidden;border-radius:10px;background:linear-gradient(90deg,#071a2a,#05111a);padding:18px}
+.rail-wrap{position:relative;height:100%;overflow:hidden}
+.rail{display:flex;gap:12px;align-items:center;position:absolute;left:0;top:0;height:100%;transition:transform 2s cubic-bezier(.2,.9,.2,1)}
+.card{width:120px;height:100%;border-radius:8px;background:var(--card-bg);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--text);box-shadow:0 6px 18px rgba(2,6,23,.6);padding:12px}
+.card img{width:100%;height:72%;object-fit:cover;border-radius:6px;margin-bottom:8px}
+.card .name{font-size:0.9rem;text-align:center}
+.card .rarity{margin-top:8px;padding:6px 8px;border-radius:6px;font-size:0.75rem}
+.selector{position:absolute;left:50%;top:0;bottom:0;width:6px;background:rgba(255,255,255,0.06);transform:translateX(-50%);box-shadow:0 0 0 2px rgba(255,255,255,0.02) inset}
+.result{margin-top:12px;font-size:1rem;color:var(--muted)}
+.inventory{margin-top:20px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:12px;border-radius:8px}
+.inv-list{list-style:none;padding:0;margin:8px 0;display:flex;flex-wrap:wrap;gap:8px}
+.inv-list li{background:#071426;padding:8px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+.footer{margin-top:18px;color:var(--muted);font-size:0.9rem}
+
+/* Rarity colors */
+.rarity-common{background:#6b7280;color:#fff}
+.rarity-uncommon{background:#3b82f6;color:#fff}
+.rarity-rare{background:#8b5cf6;color:#fff}
+.rarity-epic{background:#fb923c;color:#07121a}
+.rarity-legendary{background:#f59e0b;color:#07121a}
+
+/* Inventory Page */
+.inv-section{margin-top:20px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:16px;border-radius:8px}
+.inv-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.inv-header h2{margin:0;flex:1}
+.skin-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px}
+.skin-card{background:linear-gradient(135deg,rgba(79,195,247,0.1),rgba(79,195,247,0.05));border:1px solid rgba(79,195,247,0.2);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.skin-card-image{width:100%;height:140px;overflow:hidden;background:#0b1220}
+.skin-card-image img{width:100%;height:100%;object-fit:cover}
+.skin-card-info{padding:12px;display:flex;flex-direction:column;gap:8px}
+.skin-name{font-weight:600;font-size:0.95rem;color:var(--text)}
+.skin-rarity{padding:4px 8px;border-radius:6px;font-size:0.75rem;width:fit-content}
+.skin-value{font-size:0.9rem;color:var(--muted)}
+.skin-value strong{color:var(--accent)}
+.btn-sell{background:#10b981;border:none;padding:8px 12px;border-radius:6px;color:#fff;cursor:pointer;font-weight:600;font-size:0.9rem}
+.btn-sell:hover{background:#059669}
+.btn-danger{background:#ef4444;color:#fff}
+.btn-danger:hover{background:#dc2626}
+.inv-stats{margin-top:16px;background:rgba(79,195,247,0.1);border:1px solid rgba(79,195,247,0.2);padding:16px;border-radius:8px}
+.stat-box{display:flex;justify-content:space-between;align-items:center;font-size:1.1rem}
+.stat-box strong{color:var(--accent)}
+.empty-msg{text-align:center;color:var(--muted);padding:32px;font-size:1rem}
+.notification{position:fixed;bottom:20px;right:20px;background:#10b981;color:#fff;padding:12px 16px;border-radius:8px;opacity:0;transition:opacity 0.3s;z-index:1000}
+.notification.show{opacity:1}
+
+@media (max-width:640px){
+	.card{width:92px}
+	.btn{padding:8px 10px}
+	.skin-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+}
